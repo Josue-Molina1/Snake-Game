@@ -1,13 +1,15 @@
-# Add background image and music
+# Import all the needed libraries and modules.
 
 import pygame
 from pygame.locals import *
 import time
 import random
 
+# Initialize size and color.
 SIZE = 40
 BACKGROUND_COLOR = (110, 110, 5)
 
+# Get into the different classes! 
 class Apple:
     def __init__(self, parent_screen):
         self.parent_screen = parent_screen
@@ -17,7 +19,7 @@ class Apple:
 
     def draw(self):
         self.parent_screen.blit(self.image, (self.x, self.y))
-        pygame.display.flip()
+        pygame.display.flip() # Could use update instead as well. 
 
     def move(self):
         self.x = random.randint(1,24)*SIZE
@@ -30,10 +32,10 @@ class Snake:
         self.direction = 'down'
 
         self.length = 1
-        self.x = [40]
-        self.y = [40]
+        self.x = [40] # Size of the Apple/Block
+        self.y = [40] # Size of the Apple/Block
 
-    def move_left(self):
+    def move_left(self): 
         self.direction = 'left'
 
     def move_right(self):
@@ -46,12 +48,12 @@ class Snake:
         self.direction = 'down'
 
     def walk(self):
-        # update body
+        # Update body. 
         for i in range(self.length-1,0,-1):
             self.x[i] = self.x[i-1]
             self.y[i] = self.y[i-1]
 
-        # update head
+        # Update head. 
         if self.direction == 'left':
             self.x[0] -= SIZE
         if self.direction == 'right':
@@ -69,7 +71,7 @@ class Snake:
 
         pygame.display.flip()
 
-    def increase_length(self):
+    def increase_length(self): # Get bigger aftwe eating an apple. 
         self.length += 1
         self.x.append(-1)
         self.y.append(-1)
@@ -88,10 +90,12 @@ class Game:
         self.apple = Apple(self.surface)
         self.apple.draw()
 
+    # Add OG music from Nokia snake game. 
     def play_background_music(self):
         pygame.mixer.music.load("/Users/josuemolina/Desktop/SnakeGame/Snake-Game/resources/Snake III JAVA game theme song.mp3")
         pygame.mixer.music.play(-1, 0)
 
+    # Add OG music from Nokia snake game. Except for the Apple eating one, I couldn't found it. 
     def play_sound(self, sound_name):
         if sound_name == "crash":
             sound = pygame.mixer.Sound("/Users/josuemolina/Desktop/SnakeGame/Snake-Game/resources/nokia 2010s2020s snake game over sound.mp3")

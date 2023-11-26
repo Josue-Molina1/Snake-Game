@@ -8,23 +8,26 @@ and made me want to drop the project, it's also fun to build a game, this was no
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Demo Video]()
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+I used VS Code and Python with the Pygame module, I tried trying to add a database to it, but failed on the attempt, that with the purpose
+of keeping an all-time highscore, I'll get it to work on the future. 
+I used the Pygame module because it has a big community, and I was more prompt to find answers to my questions using it, I also used 
+the random module, to generate a random "Apple" anywhere on my canvas to keep the game moving. 
 
-{Describe the programming language that you used and any libraries.}
+It was really fun to use Pygame, I hope I can create a rogue-like in the future. 
 
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Pygame.org](https://www.pygame.org/news)
+* [YouTube](youtube.com)
 
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* I would like to make it so the snake can travel through walls, just like on the Nokia game, I had some issues with the coordinates. 
+* I would like to add different colors a different background and many other things like a more realistic snake. 
+* Implement a database to keep records of the top scorers on the game. 
